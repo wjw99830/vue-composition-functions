@@ -1,0 +1,33 @@
+{
+  "name": "vue-composition-functions",
+  "version": "0.1.0",
+  "description": "Support function-api in Vue 3.0 when using Vue 2.x.",
+  "main": "src/main.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wjw99830/vue-composition-functions.git"
+  },
+  "keywords": [
+    "vue",
+    "function-api",
+    "composition-function"
+  ],
+  "author": "wjw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wjw99830/vue-composition-functions/issues"
+  },
+  "homepage": "https://github.com/wjw99830/vue-composition-functions#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
