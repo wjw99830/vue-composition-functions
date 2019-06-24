@@ -1,8 +1,10 @@
 <template>
   <div class="comp">
+    <div>{{ msg }}</div>
     <span>{{ count }}</span>
     <button @click="count++">Click me!</button>
     <span>{{ propPlus }}</span>
+    <button @click="msg += '-msg'">long msg</button>
   </div>
 </template>
 <script>
@@ -13,12 +15,10 @@ export default {
   setup(props) {
     const count = value(0);
     const propPlus = computed(() => props.prop1 + '-plus');
-    watch(count, (newVal, oldVal) => {
-      console.log(newVal, oldVal);
-      console.log('count has changed');
-    });
-    onMounted(() => console.log('mounted'));
+    watch(count, (newVal, oldVal) => {});
+    onMounted(() => console.log(propPlus.value));
     return {
+      msg: 'hello',
       count,
       propPlus,
     };

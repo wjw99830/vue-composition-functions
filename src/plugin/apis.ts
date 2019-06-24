@@ -1,9 +1,8 @@
 import Vue from 'vue';
 import { renderingInstance } from '.';
-type AnyFunction = (...rest: any[]) => any;
-interface Wrapper<T> {
-  value: T;
-}
+import { Wrapper } from './wrapper';
+export type AnyFunction = (...rest: any[]) => any;
+
 /**
  * Detect the context when api called.
  * @param {string} name apiName
@@ -15,17 +14,11 @@ function detectContext(name: string) {
 }
 
 export const value = <T>(initValue: T): Wrapper<T> => {
-  const wrapper = Vue.observable({
-    value: initValue,
-  });
+  const wrapper = new Wrapper(initValue);
   return wrapper;
 };
 export const computed = <T>(getter: () => T) => {
-  const inactiveWrapper = {};
-  Object.defineProperty(inactiveWrapper, 'value', {
-    get: getter,
-  });
-  const wrapper = Vue.observable(inactiveWrapper);
+  const wrapper = new Wrapper(getter, { isComputed: true });
   return wrapper;
 };
 export const watch = <T>(dep: Wrapper<T> | (() => T), cb: (newVal: T, oldValue: T) => any) => {
