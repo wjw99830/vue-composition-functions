@@ -2,7 +2,7 @@
   "name": "vue-composition-functions",
   "version": "0.1.0",
   "description": "Support function-api in Vue 3.0 when using Vue 2.x.",
-  "main": "src/main.ts",
+  "main": "src/index.ts",
   "directories": {
     "test": "tests"
   },
