@@ -29,5 +29,8 @@
   "homepage": "https://github.com/wjw99830/vue-composition-functions#readme",
   "devDependencies": {
     "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
   }
 }
