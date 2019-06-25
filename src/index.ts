@@ -28,9 +28,9 @@ function _setup(this: Vue) {
     }
     for (const key of Object.keys(renderOrState)) {
       Object.defineProperty(this, key, {
-        get() {
+        get: () => {
           const reactiveData = get(renderOrState, key);
-          return typeof reactiveData === 'function' ? reactiveData : reactiveData.value;
+          return typeof reactiveData === 'function' ? reactiveData.bind(this) : reactiveData.value;
         },
         set(v: any) {
           const reactiveData = get(renderOrState, key);
