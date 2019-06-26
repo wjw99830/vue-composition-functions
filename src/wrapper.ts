@@ -4,6 +4,10 @@ export interface WrapperOptions {
 }
 export class Wrapper<T> {
   public value!: T;
+  /**
+   * use type unknown for raw.value since there is a slight difference between computed and value.
+   * type unknown could be asserted to any type with sound type inference.
+   */
   private raw: { value: unknown };
   constructor(value: T, opts: Partial<WrapperOptions> = {}) {
     this.raw = Vue.observable({
